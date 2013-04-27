@@ -1,5 +1,12 @@
 h1. Pearup2
 
+To Do: 
+1. Timezone Differences
+2. Add max time per an event?
+
+
+
+
 This application was generated with the "rails_apps_composer":https://github.com/RailsApps/rails_apps_composer gem provided by the "RailsApps Project":http://railsapps.github.com/.
 
 h2. Diagnostics
