@@ -11,8 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426210445) do
+ActiveRecord::Schema.define(:version => 20130427235841) do
 
+  create_table "api_events", :force => true do |t|
+    t.text     "activity"
+    t.text     "description"
+    t.integer  "max_attend"
+    t.integer  "cur_attend"
+    t.integer  "host_id"
+    t.date     "date"
+    t.time     "time_start"
+    t.time     "time_end"
+    t.string   "location"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "events", :force => true do |t|
     t.text     "activity"
@@ -39,6 +52,13 @@ ActiveRecord::Schema.define(:version => 20130426210445) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "user_events", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -54,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20130426210445) do
     t.datetime "updated_at",                             :null => false
     t.string   "name"
     t.string   "authentication_token"
+    t.string   "host_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

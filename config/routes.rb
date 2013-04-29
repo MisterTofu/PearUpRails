@@ -5,9 +5,13 @@ PearUp2::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
+  
   
 	namespace :api do
-    	resources :tokens, :only => [:create, :destroy], :via => [:post, :get]
-    	resources :events, :only => [:create, :destroy], :via => [:post, :get]
+    	resources :tokens, :only => [:create, :destroy]
+    	    	resources :events, :only => [:create, :destroy]
+    	match 'events' => 'events#create', :via => [:get, :post]
+
     end
 end

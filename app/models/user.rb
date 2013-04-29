@@ -17,6 +17,7 @@
 #  updated_at             :datetime         not null
 #  name                   :string(255)
 #  authentication_token   :string(255)
+#  host_id                :string(255)
 #
 
 class User < ActiveRecord::Base
