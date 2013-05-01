@@ -10,8 +10,9 @@ PearUp2::Application.routes.draw do
   
 	namespace :api do
     	resources :tokens, :only => [:create, :destroy]
-    	    	resources :events, :only => [:create, :destroy]
+    	resources :events, :only => [:create, :destroy, :view]
+    	match 'tokens' => 'tokens#create'
     	match 'events' => 'events#create', :via => [:get, :post]
-
+    	match 'viewevents' => 'events#view'
     end
 end

@@ -11,21 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427235841) do
-
-  create_table "api_events", :force => true do |t|
-    t.text     "activity"
-    t.text     "description"
-    t.integer  "max_attend"
-    t.integer  "cur_attend"
-    t.integer  "host_id"
-    t.date     "date"
-    t.time     "time_start"
-    t.time     "time_end"
-    t.string   "location"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130501002441) do
 
   create_table "events", :force => true do |t|
     t.text     "activity"
