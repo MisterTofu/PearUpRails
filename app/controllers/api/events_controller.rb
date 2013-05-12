@@ -1,4 +1,4 @@
-# Author: Travis A Ebesu
+# Author: Travis A Ebesu (c) 2013
 # Date: 4/26/2013
 # 	To DO:
 # 		Input filtering 
