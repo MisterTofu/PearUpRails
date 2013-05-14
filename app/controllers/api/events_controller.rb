@@ -10,7 +10,17 @@ class Api::EventsController < ApplicationController
 # Authorization is required prior to access
 before_filter :authenticate_user!
 respond_to :json
-
+	def single
+		event_id = Integer(params[:id])
+		@event = Event.find_by_id event_id
+		if @event.nil?
+			render :json => {:message => "Event Not Found"}, :callback => params[:callback]
+			return
+		else
+			render :status => 200, :json => {:event => @event}, :callback => params[:callback]
+		end
+	end
+	
 	def view
 		range_start = Integer(params[:range_start])
 		range_end = Integer(params[:range_end])
@@ -22,6 +32,7 @@ respond_to :json
 		
 		Event.limit(range_limit).offset(range_start)
 		@event = Event.all
+		# check event null
 		render :status=>200, :json=>{:events => @event}, :callback => params[:callback]
 		
 	end
