@@ -50,11 +50,11 @@ respond_to :json
 		activity = params[:activity]
 		description = params[:description]
 		max_attend = params[:max]
-		start_time = DateTime.parse params[:start]
-		end_time = DateTime.parse params[:end]
+		start_time = params[:start].to_time
+		end_time = params[:end].to_time
 		location = params[:location]
 		#Ensure time are in right format
-		
+
 		@user = User.find_by_authentication_token(params[:auth_token])	
 		if start_time > end_time
 			render :json => {:message => "Cannot start before it ends"}, :callback => params[:callback]

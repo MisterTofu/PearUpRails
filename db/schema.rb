@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501002441) do
+ActiveRecord::Schema.define(:version => 20130515012959) do
 
   create_table "events", :force => true do |t|
     t.text     "activity"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20130501002441) do
     t.integer  "max_attend"
     t.integer  "cur_attend"
     t.integer  "host_id"
-    t.date     "date"
     t.time     "time_start"
     t.time     "time_end"
     t.string   "location"
