@@ -7,12 +7,35 @@
 # https://github.com/RailsApps/rails-composer/blob/master/files/gitignore.txt
 #
 # Corrections? Improvements? Create a GitHub issue:
-# http://github.com/RailsApps/rails-composer/issues
+i# http://github.com/RailsApps/rails-composer/issues
 #----------------------------------------------------------------------------
 
-# Pearup Mobile Application
+# Pear Up Mobile App Code
+  public/#readme.md#
+# public/Prototype1.png
+# public/Prototype2.png
+# public/Prototype3.png
+# public/_notes/
+# public/add-event.html.html
+# public/add_event.html
+# public/api.html
+# public/cd
+# public/cordova-2.6.0.js
+# public/css/
+# public/events.html
+# public/img/
+# public/index.html
+# public/index3.html
+# public/js/
+# public/login.html
+# public/profile.html
+# public/readme.md
+# public/readme.md~
+# public/register.html
+# public/res/
+# public/spec.html
+# public/spec/
 
-/public/
 
 
 # bundler state
