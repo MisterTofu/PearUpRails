@@ -1,8 +1,8 @@
 # __ Pear uP  - Ruby on Rails__
 
 ##To Do 
-1. - [ ] Timezone Differences
-2. [ ] Add max time per an event?
+1. Timezone Differences
+2. Add max time per an event?
 
 
 
