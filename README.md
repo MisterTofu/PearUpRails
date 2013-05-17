@@ -1,8 +1,11 @@
-# __ Pear uP  - Ruby on Rails__
+# Pear uP  - Ruby on Rails
 
 ##To Do 
-1. Timezone Differences
-2. Add max time per an event?
+* Events
+	* Timezone Differences
+	* Add max time per an event?
+* Profile
+	* Merge table with users
 
 
 
@@ -12,7 +15,7 @@
 
 
 
-h2. Base Template Specs
+##### Base Template Specs
 
 * Template Engine: Haml
 * Testing Framework: RSpec and Factory Girl and Cucumber
