@@ -14,8 +14,7 @@ YAML.load(ENV['ROLES']).each do |role|
 end
 puts 'DEFAULT USERS'
 user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
-puts 'user: ' << user.name
+puts 'Creating: ' << user.name
 user.add_role :admin
 
-
-
+Event.find_or_create_by_activity :activity => "Pearing Up", :description => "Pear Up Discussion", :location => "McDinners", :max_attend => 6, :cur_attend => 1, :host_id => 0, :time_start => "", :time_end => ""

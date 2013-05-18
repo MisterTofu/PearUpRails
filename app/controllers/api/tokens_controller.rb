@@ -10,12 +10,12 @@ respond_to :json
 		email = params[:email]
 		password = params[:password]
 		if request.format != :json
-			render :status=>406, :json=>{:message=>"The request must be json"}, :callback => params[:callback]
+			render :status => 406, :json=>{:message=>"The request must be json"}, :callback => params[:callback]
 			return
 		end
 		
 		if email.nil? or password.nil?
-			render :status=>400, :json=>{:message=> "Invalid json format"}, :callback => params[:callback]
+			render :status => 400, :json=>{:message=> "Invalid json format"}, :callback => params[:callback]
 			return
 		end
 		
@@ -23,7 +23,7 @@ respond_to :json
 		
 		if @user.nil?
 			logger.info("User #{email} failed signin, user cannot be found.")
-			render :status=>401, :json=>{:message=>"Invalid email or passoword."}, :callback => params[:callback]
+			render :status => 401, :json=>{:message=>"Invalid email or passoword."}, :callback => params[:callback]
 			return
 		end
 		
@@ -31,9 +31,9 @@ respond_to :json
 		@user.ensure_authentication_token!
 		
 		if not @user.valid_password?(password)
-			render :status=>401, :json=>{:message=>"Invalid email or password."}, :callback => params[:callback]
+			render :status => 401, :json=>{:message=>"Invalid email or password."}, :callback => params[:callback]
 		else
-			render :status=>200, :json=>{:token=> @user.authentication_token}, :callback => params[:callback]
+			render :status => 200, :json=>{:token=> @user.authentication_token}, :callback => params[:callback]
 		end
 	end
  
