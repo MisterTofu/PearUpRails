@@ -18,6 +18,14 @@
 #  name                   :string(255)
 #  authentication_token   :string(255)
 #  host_id                :string(255)
+#  firstname              :string(255)
+#  lastname               :string(255)
+#  phone                  :string(255)
+#  age                    :integer
+#  city                   :string(255)
+#  state                  :string(255)
+#  zipcode                :integer
+#  school                 :string(255)
 #
 
 class User < ActiveRecord::Base
@@ -27,9 +35,15 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
-
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+
+  # validations
+  validates_uniqueness_of :email
+  validates_presence_of :email, :firstname, :lastname, :encrypted_password
+
+
   
 end

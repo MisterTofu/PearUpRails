@@ -2,14 +2,12 @@
 
 ##To Do 
 * Events
-	* Timezone Differences
-	* Add max time per an event?
-* Profile
-	* Merge table with users
-
-
-
-
+	[ ] Timezone Differences
+	[ ] Add max time per an event?
+* Profile/Users
+	[X] Merge table with users
+	[ ] Delete activity date field
+	[ ] Ensure it works passing json
 
 
 

@@ -5,7 +5,7 @@ PearUp2::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
-
+#   match '/cordova_plugins.json' => "home"
   
   
 	namespace :api do

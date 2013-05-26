@@ -8,7 +8,6 @@
 #  max_attend  :integer
 #  cur_attend  :integer
 #  host_id     :integer
-#  date        :date
 #  time_start  :time
 #  time_end    :time
 #  location    :string(255)

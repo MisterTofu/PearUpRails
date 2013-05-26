@@ -8,7 +8,6 @@
 #  max_attend  :integer
 #  cur_attend  :integer
 #  host_id     :integer
-#  date        :date
 #  time_start  :time
 #  time_end    :time
 #  location    :string(255)
@@ -17,5 +16,6 @@
 #
 
 class Event < ActiveRecord::Base
-   attr_accessible :activity, :description, :max_attend, :cur_attend, :host_id, :date, :time_start, :time_end, :location
+	attr_accessible :activity, :description, :max_attend, :cur_attend, :host_id, :date, :time_start, :time_end, :location
+	validates_presence_of :activity, :description, :max_attend, :cur_attend, :host_id, :date, :time_start, :time_end, :location
 end

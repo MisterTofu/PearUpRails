@@ -19,7 +19,7 @@ respond_to :json
 			render :json => {:message => "Event Not Found"}, :callback => params[:callback]
 			return
 		else
-			render :status => 200, :json => {:event => @event}, :callback => params[:callback]
+			render :status => 200, :success => true, :json => {:event => @event}, :callback => params[:callback]
 		end
 	end
 	
@@ -34,10 +34,11 @@ respond_to :json
 		end
 		range_limit = range_end - range_start
 		
+		
 		Event.limit(range_limit).offset(range_start)
 		@event = Event.all
 		# check event null
-		render :status=>200, :json=>{:events => @event}, :callback => params[:callback]
+		render :status=>200, :success => true, :json=>{:events => @event}, :callback => params[:callback]
 		
 	end
 	
@@ -47,7 +48,7 @@ respond_to :json
 			
 			
 		if request.format != :json
-			render :status=>406, :json=>{ :message=> "The request must be json"}, :callback => params[:callback]
+			render :status=> 406, :json=>{ :message=> "The request must be json"}, :callback => params[:callback]
 			return
 		end
 		puts "starting create event"
@@ -109,7 +110,7 @@ respond_to :json
 		# Check Event already exists by user, no duplicates and user not busy
 		UserEvent.create :event_id => @event.id, :user_id => @user.id
 				
-		 render :status=>200, :json=>{:message=> "Successfully added event", :debug => @event}, :callback => params[:callback]
+		 render :status => 200, :json=>{:message=> "Successfully added event", :debug => @event}, :callback => params[:callback]
 	end
 	
 	def destroy

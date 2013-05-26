@@ -18,6 +18,14 @@
 #  name                   :string(255)
 #  authentication_token   :string(255)
 #  host_id                :string(255)
+#  firstname              :string(255)
+#  lastname               :string(255)
+#  phone                  :string(255)
+#  age                    :integer
+#  city                   :string(255)
+#  state                  :string(255)
+#  zipcode                :integer
+#  school                 :string(255)
 #
 
 require 'spec_helper'
