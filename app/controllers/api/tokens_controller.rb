@@ -11,19 +11,19 @@ class Api::TokensController < ApplicationController
 respond_to :json
 
 
-		    
+   
     # Login: email, password => json 
     def create
-    if request.format != :json
-	render :status => 406, :json=>{ :error => true, :message=>"The request must be json" }, :callback => params[:callback]
-	return
-end
+	    if request.format != :json
+			render :status => 406, :json=>{ :error => true, :message=>"The request must be json" }, :callback => params[:callback]
+			return
+		end	 
 		email = params[:email]
 		password = params[:password]
 
 		
 		if email.nil? or password.nil?
-			render :status => 406, :json=>{:message=> "Invalid json format"}, :callback => params[:callback]
+			render :status => 406, :json => { :message=> "No email/password found" }, :callback => params[:callback]
 			return
 		end
 		
@@ -41,7 +41,7 @@ end
 		if not @user.valid_password?(password)
 			render :status => 401, :json=>{:message=>"Invalid email or password."}, :callback => params[:callback]
 		else
-			render :status => 200, :json=>{:token=> @user.authentication_token}, :callback => params[:callback], 
+			render :status => 200, :json=>{:token=> @user.authentication_token}, :callback => params[:callback]
 		end
 	end
  
