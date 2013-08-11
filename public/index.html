@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <title>Pear uP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.1.min.css" />
+    <!--     <link rel="stylesheet" type="text/css" href="css/index.css" /> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="cordova-2.6.0.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+    <!--         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASSOyAbDFynRWSL_35Rxek5CxfFEU72BI&sensor=true"></script> -->
+    
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.mobile-1.3.1.min.js"></script>
+    <script src="js/mustache.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+<!--         <script type="text/javascript" src="js/maps.js"></script> -->
+    <script type="text/javascript">
+    
+$(document).ready(function() {
+	//$(document).on('mobileinit', function () {
+	/*
+	Things to do:
+		- Fix Login
+		- Add Register
+		- Check internet connection
+		- Refresh event feed, by pull
+		
+	*/
+    /* 
+	 * Keep a timer to refresh event feed/manual option
+	 */
+
+	
+	var google_key = "AIzaSyASSOyAbDFynRWSL_35Rxek5CxfFEU72BI";
+	
+
+
+	$(".events_page").click(function() {
+		if(Core.checkURLHash("home"))
+			Core.Events.loadFeed();	
+	});
+
+	
+	$(".add_event_page").click(function() {
+		if(Core.checkURLHash("add_event"))
+	        $(".ui-content").load("api.html #event_form");
+    });
+	
+	$(".profile_page").click(function(){
+		if(Core.checkURLHash("profile"))
+			$("#p_content").load("api.html #profile");		
+	});
+
+});
+
+
+    </script>
+    </head>
+
+    <body>
+    <div data-role="page">
+      <div data-role="header" data-position="fixed" id="p_header">
+        <h1>Pear uP</h1>
+      </div>
+
+      <div data-role="content" id="p_content"> </div>
+      <div data-role="footer" data-position="fixed" id="p_footer">
+        <div data-role="navbar">
+          <ul>
+            <li><a class="events_page">Events</a></li>
+            <li><a class="add_event_page">Add Event</a></li>
+            <li><a class="profile_page">Profile</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+
+
+

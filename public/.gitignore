@@ -1,0 +1,8 @@
+
+# don't track rails files
+404.html
+422.html
+500.html
+favicon.ico
+humans.txt
+robots.txt

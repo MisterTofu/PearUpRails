@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#profilePicture
+{
+	max-width: 90%;
+	max-height: 90%;
+	border: 1px solid black;
+}
+
+#profileHeader
+{
+	text-align: left;
+	margin-top: 0px;
+}
+
+#pullleft
+{
+	float: left;
+}

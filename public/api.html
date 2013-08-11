@@ -1,0 +1,69 @@
+<!--This is for the event form page-->
+<form id="event_form">
+  <label for="activity" class="ui-input-text">Activity:</label>
+  <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-c">
+    <input id="activity" class="required ui-input-text ui-body-c" name="activity" type="text" placeholder="eg Lunch">
+  </div>
+  <label for="location" class="ui-input-text">Location:</label>
+  <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-c">
+    <input class="required ui-input-text ui-body-c" id="location" name="location" type="text" placeholder="eg Ala Moana, Honolulu, HI">
+  </div>
+  <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+    <label for="maxLabel">Number of Participants:</label>
+    <div class="ui-select">
+      <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-icon="arrow-d" data-iconpos="right" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-right ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text"><span class="required">2</span></span><span class="ui-icon ui-icon-arrow-d ui-icon-shadow">&nbsp;</span></span>
+        <select class="required" name="max" id="max">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <label for="start" class="ui-input-text">Time Start:</label>
+  <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-c">
+    <input id="start" class="required ui-input-text ui-body-c" name="start" type="datetime-local" data-clear-btn="false" placeholder="eg 11:00am">
+  </div>
+  <label for="end" class="ui-input-text">Time End:</label>
+  <div class="ui-input-text ui-shadow-inset ui-corner-all ui-btn-shadow ui-body-c">
+    <input name="end" class="required ui-input-text ui-body-c" id="end" type="datetime-local" data-clear-btn="false" placeholder="eg 12:30pm">
+  </div>
+  <label for="description" class="ui-input-text">Description:</label>
+  <textarea class="required ui-input-text ui-body-c ui-corner-all ui-shadow-inset" name="description" id="description" cols="40" rows="8" placeholder="eg Have fun doing something"></textarea>
+  <div data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" data-disabled="false" class="ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" aria-disabled="false"><span class="ui-btn-inner"><span class="ui-btn-text">Submit</span></span>
+    <input type="button" id="add_event_button" value="Submit" class="ui-btn-hidden" data-disabled="false">
+  </div>
+</form>
+
+<!--This is the profile layout-->
+<div id="profile">
+  <h1 id="profileHeader">Barack Obama</h1>
+  <div class="ui-grid-a">
+    <div class="ui-block-a"><img src="./img/obama.jpg" id="profilePicture"></div>
+    <div class="ui-block-b">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Intersts:</th>
+            <td>Being President</td>
+          </tr>
+          <tr>
+            <th scope="row">Location:</th>
+            <td>Kailua, Hawaii, USA</td>
+          </tr>
+          <tr>
+            <th scope="row">School:</th>
+            <td>Something University</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- /grid-a --> 
+<a href="#" id="logoutButton" data-role="button" data-mini="true" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-inline ui-btn-up-c" style="
+    float: right;
+"><span class="ui-btn-inner"><span class="ui-btn-text">Logout</span></span></a>
+  
+</div>
