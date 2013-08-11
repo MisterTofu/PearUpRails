@@ -2,15 +2,16 @@
 
 ##To Do 
 * Events
-	[ ] Timezone Differences
-	[ ] Add max time per an event?
+	- [ ] Timezone Differences
+	- [ ] Add max time per an event?
 * Profile/Users
-	[X] Merge table with users
-	[ ] Delete activity date field
-	[ ] Ensure it works passing json
+	- [ ] Delete activity date field
 
 
 
+### Nodejs for later?
+* passportjs
+* expressjs
 
 
 ##### Base Template Specs

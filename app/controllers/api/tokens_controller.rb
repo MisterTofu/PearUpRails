@@ -20,7 +20,6 @@ respond_to :json
 		end	 
 		email = params[:email]
 		password = params[:password]
-
 		
 		if email.nil? or password.nil?
 			render :status => 406, :json => { :message=> "No email/password found" }, :callback => params[:callback]

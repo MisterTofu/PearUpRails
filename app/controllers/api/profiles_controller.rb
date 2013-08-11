@@ -24,22 +24,31 @@ respond_to :json
 # 		end
 	end
 	
-	
+#  name                   :string(255)
+#  authentication_token   :string(255)
+#  host_id                :string(255)
+#  firstname              :string(255)
+#  lastname               :string(255)
+#  phone                  :string(255)
+#  age                    :integer
+#  city                   :string(255)
+#  state                  :string(255)
+#  zipcode                :integer
+#  school                 :string(255)
 	
 	def view
-		range_start = Integer(params[:range_start])
-		range_end = Integer(params[:range_end])	
-		if range_start > range_end
-			render :status=>406, :json=>{ :message=> "Invalid Range, start > end"}, :callback => params[:callback]
+		token = params[:auth_token]
+		email = params[:email]
+		
+
+		profile = User.find_by_email(email)
+
+		# check event null
+		if profile.nil?
+			render :json => {:message => profile}, :callback => params[:callback]
 			return
 		end
-		range_limit = range_end - range_start
-		
-		
-		Event.limit(range_limit).offset(range_start)
-		@event = Event.all
-		# check event null
-		render :status=>200, :success => true, :json=>{:events => @event}, :callback => params[:callback]
+		render :status=>200, :success => true, :json=>{:firstname => profile.firstname, :lastname => profile.lastname, :age => profile.age, :school => profile.school}, :callback => params[:callback]
 		
 	end
 	

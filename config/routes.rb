@@ -15,5 +15,6 @@ PearUp2::Application.routes.draw do
     	match 'events' => 'events#create'
     	match 'viewevents' => 'events#view'
     	match 'singleevent' => 'events#single'
+    	match 'profiles' => 'profiles#view'
     end
 end
