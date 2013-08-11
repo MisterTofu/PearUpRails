@@ -35,8 +35,9 @@ respond_to :json
 		range_limit = range_end - range_start
 		
 		
-		Event.limit(range_limit).offset(range_start)
+#		Event.limit(range_limit).offset(range_start)
 		@event = Event.all
+		puts Event.all
 		# check event null
 		render :status=>200, :success => true, :json=>{:events => @event}, :callback => params[:callback]
 		

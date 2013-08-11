@@ -24,8 +24,9 @@
  
 
 Given /^I am on the login page$/ do
-	 visit '/'	
+	 
 	page.should have_content "Login"
+
 end
 
 
@@ -44,7 +45,7 @@ end
 
 
 Then /^I should see the Event page$/ do
-puts page.html
+	puts page.html
 end
 
  
