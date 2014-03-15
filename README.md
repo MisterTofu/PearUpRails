@@ -1,4 +1,5 @@
 # Pear uP  - Ruby on Rails
+Early attempt to make a backendish server for a friends mobile application was good for learning, depreciated
 
 ##To Do 
 * Events
