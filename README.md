@@ -34,3 +34,4 @@ Recipes:
 
 Preferences:
 {:git=>true, :railsapps=>"rails3-bootstrap-devise-cancan", :database=>"sqlite", :unit_test=>"rspec", :integration=>"cucumber", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"gmail", :authentication=>"devise", :devise_modules=>"default", :authorization=>"cancan", :starter_app=>"admin_app", :form_builder=>"simple_form", :quiet_assets=>true, :local_env_file=>true, :better_errors=>true, :dev_webserver=>"thin", :prod_webserver=>"thin", :templates=>"haml", :continuous_testing=>"none", :rvmrc=>false, :ban_spiders=>true}
+[![Analytics](https://ga-beacon.appspot.com/UA-62086129-1/PearUpRails/readme?pixel)](https://github.com/igrigorik/ga-beacon)
